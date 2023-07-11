@@ -1,0 +1,32 @@
+@import 'variables';
+
+// Margin all sides
+.fm-all-1 {
+  margin: $spacing-04;
+}
+.fm-all-2 {
+  margin: $spacing-05;
+}
+// Margin vertical only
+.fm-vertical-1 {
+  margin: $spacing-04 0;
+}
+.fm-vertical-2 {
+  margin: $spacing-05 0;
+}
+
+// Padding all sides
+.fp-all-1 {
+  padding: $spacing-04;
+}
+.fp-all-2 {
+  padding: $spacing-05;
+}
+
+// Padding vertical only
+.fp-vertical-1 {
+  padding: $spacing-04 0;
+}
+.fp-vertical-2 {
+  padding: $spacing-05 0;
+}

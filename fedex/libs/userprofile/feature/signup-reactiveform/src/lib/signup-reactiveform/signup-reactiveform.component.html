@@ -1,0 +1,58 @@
+<mat-card>
+  <!--Form content-->
+  <mat-card-content>
+    <form
+      [formGroup]="signupForm"
+      class="flex flex-column"
+      (ngSubmit)="onSignup(signupForm.value)"
+    >
+      <!--First Name-->
+      <fedex-reactive-form-field
+        type="text"
+        label="First Name"
+        placeholder="Enter first name"
+        [control]="getFormControl('firstName')"
+      />
+      <!--Last Name-->
+      <fedex-reactive-form-field
+        type="text"
+        label="Last Name"
+        placeholder="Enter last name"
+        [control]="getFormControl('lastName')"
+      />
+      <!--Email-->
+      <fedex-reactive-form-field
+        type="email"
+        label="Email"
+        placeholder="Enter email"
+        [control]="getFormControl('email')"
+      />
+      <!--Password-->
+      <fedex-reactive-form-field
+        type="password"
+        label="Password"
+        placeholder="Enter password"
+        [control]="getFormControl('password')"
+      />
+      <!--Action-->
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="signupForm.invalid"
+      >
+        <!--Shows spinner based on request status-->
+        <fedex-signup-loader
+          [status]="signupStatus.status"
+        ></fedex-signup-loader>
+      </button>
+    </form>
+  </mat-card-content>
+  <!--Shows confirmation-->
+  <mat-card-footer class="fm-all-1">
+    <fedex-signup-confirmation
+      [signupStatus]="signupStatus"
+      [fullName]="fullName$ | async"
+    ></fedex-signup-confirmation>
+  </mat-card-footer>
+</mat-card>

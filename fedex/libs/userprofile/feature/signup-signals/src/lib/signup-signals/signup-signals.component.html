@@ -1,0 +1,53 @@
+<mat-card>
+  <mat-card-content>
+    <form #signupForm="ngForm" (ngSubmit)="onSignup()">
+      <fedex-template-form-field
+        [signalModel]="firstName"
+        type="text"
+        name="userFirstName"
+        label="First Name"
+        placeholder="Enter your first name"
+      />
+      <fedex-template-form-field
+        [signalModel]="lastName"
+        type="text"
+        name="userLastName"
+        label="Last Name"
+        placeholder="Enter your last name"
+      />
+      <fedex-template-form-field
+        [signalModel]="email"
+        type="email"
+        name="userEmail"
+        label="Email"
+        placeholder="Enter your email"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+      />
+      <fedex-template-form-field
+        [signalModel]="password"
+        type="password"
+        name="userPassword"
+        label="Password"
+        placeholder="Enter your password"
+        [userFirstName]="firstName()"
+        [userLastName]="lastName()"
+      />
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="signupForm.invalid"
+      >
+        <fedex-signup-loader
+        [status]="signupStatus.status"
+        ></fedex-signup-loader>
+      </button>
+    </form>
+  </mat-card-content>
+  <mat-card-footer class="fm-all-1">
+    <fedex-signup-confirmation
+      [signupStatus]="signupStatus"
+      [fullName]="fullName()"
+    ></fedex-signup-confirmation>
+  </mat-card-footer>
+</mat-card>

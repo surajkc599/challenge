@@ -1,0 +1,18 @@
+<mat-toolbar>
+  <nav mat-tab-nav-bar [tabPanel]="tabPanel" class="mat-elevation-z8">
+    <a
+      mat-tab-link
+      *ngFor="let route of routesMetadata"
+      routerLink="{{ route.path }}"
+      routerLinkActive
+      #rla="routerLinkActive"
+      [active]="rla.isActive"
+    >
+      <mat-icon class="fp-all-1">{{ route.icon }}</mat-icon>
+      <span>{{ route.label }}</span>
+    </a>
+  </nav>
+</mat-toolbar>
+<mat-tab-nav-panel #tabPanel>
+  <ng-content></ng-content>
+</mat-tab-nav-panel>

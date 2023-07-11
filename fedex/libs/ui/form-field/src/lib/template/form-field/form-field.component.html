@@ -1,0 +1,21 @@
+<mat-form-field class="w-100">
+  <mat-label>{{ label }}</mat-label>
+  <input
+    matInput
+    [type]="type"
+    [name]="name"
+    [placeholder]="placeholder"
+    [ngModel]="signalModel()"
+    (ngModelChange)="signalModel.set($event)"
+    [pattern]="pattern"
+    required
+    #control="ngModel"
+    fedexPasswordValidator
+    [controlName]="name"
+    [userFirstName]="userFirstName"
+    [userLastName]="userLastName"
+  />
+  <mat-error *ngFor="let error of errorMessage(control) | keyvalue">
+    {{ error.value }}
+  </mat-error>
+</mat-form-field>

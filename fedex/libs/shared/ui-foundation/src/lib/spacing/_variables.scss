@@ -1,0 +1,9 @@
+// Depends on organization, for now 8px grid!
+// Applications can override if they intend to do so. (But ideally not I would not suggest!)
+$spacing-0: 0 !default;
+$spacing-01: 0.0625rem !default;
+$spacing-02: 0.125rem !default;
+$spacing-03: 0.25rem !default;
+$spacing-04: 0.5rem !default;
+$spacing-05: 1rem !default;
+$spacing-06: 2.5rem !default;

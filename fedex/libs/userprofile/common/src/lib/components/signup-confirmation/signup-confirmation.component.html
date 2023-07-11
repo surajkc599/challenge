@@ -1,0 +1,24 @@
+<ng-container
+  *ngIf="{
+    response: signupStatus,
+    username: fullName
+  } as signup"
+>
+  <!--When status is Error-->
+  <ng-container *ngIf="signup.response?.status === 'ERROR'">
+    <p>Sorry something went wrong, please try later..</p>
+  </ng-container>
+
+  <!--When status is In progress-->
+  <ng-container *ngIf="signup.response?.status === 'INPROGRESS'">
+    <p>Signup is in progress..</p>
+  </ng-container>
+
+  <!--When status is Success-->
+  <ng-container *ngIf="signup.response?.status === 'SUCCESS'">
+    <p>
+      {{ signup.username | uppercase }} your registration is success with id
+      {{ signup.response?.data?.id }}
+    </p>
+  </ng-container>
+</ng-container>

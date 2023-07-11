@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/**/*.ts",
+    "libs/shared/environments/src/lib/environments/environment.service.ts"
+  ],
+  "compilerOptions": {
+    "types": ["jest", "node"]
+  }
+}

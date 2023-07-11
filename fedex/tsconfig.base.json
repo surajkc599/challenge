@@ -1,0 +1,38 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2022",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@fedex/shared/api-resource": ["libs/shared/api-resource/src/index.ts"],
+      "@fedex/shared/environments": ["libs/shared/environments/src/index.ts"],
+      "@fedex/shared/registry": ["libs/shared/registry/src/index.ts"],
+      "@fedex/shared/ui-common": ["libs/shared/ui-common/src/index.ts"],
+      "@fedex/shared/ui-foundation": ["libs/shared/ui-foundation/src/index.ts"],
+      "@fedex/ui/form-field": ["libs/ui/form-field/src/index.ts"],
+      "@fedex/ui/layout": ["libs/ui/layout/src/index.ts"],
+      "@fedex/userprofile/common": ["libs/userprofile/common/src/index.ts"],
+      "@fedex/userprofile/domain": ["libs/userprofile/domain/src/index.ts"],
+      "@fedex/userprofile/feature/signup-reactiveform": [
+        "libs/userprofile/feature/signup-reactiveform/src/index.ts"
+      ],
+      "@fedex/userprofile/feature/signup-signals": [
+        "libs/userprofile/feature/signup-signals/src/index.ts"
+      ],
+      "@fedex/util/directive": ["libs/util/directive/src/index.ts"],
+      "@fedex/util/validator": ["libs/util/validator/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

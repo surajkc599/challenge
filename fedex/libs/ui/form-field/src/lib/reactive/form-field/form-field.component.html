@@ -1,0 +1,10 @@
+<mat-form-field class="w-100">
+  <mat-label>{{ label }}</mat-label>
+  <input
+    matInput
+    [type]="type"
+    [placeholder]="placeholder"
+    [formControl]="control"
+  />
+  <mat-error>{{ errorMessage }}</mat-error>
+</mat-form-field>
